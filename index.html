@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Profile - Lưu Anh Hoàng</title>
+    <meta name="description"
+        content="Trang hồ sơ cá nhân của Lưu Anh Hoàng." />
+    <meta name="keywords"
+        content="Lưu Anh Hoàng đẹp trai vãi lồn ấy ae" />
+    <meta name="author" content="Lưu Anh Hoàng" />
+    <meta property="og:title" content="Profile - Lưu Anh Hoàng" />
+    <meta property="og:description"
+        content="Trang hồ sơ cá nhân của Lưu Anh Hoàng" />
+    <meta property="og:image" content="/Assets/images/avatar.png" />
+    <meta property="og:type" content="website" />
+    <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="/Assets/images/Favicon/apple-touch-icon.png" />
+    <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="/Assets/images/Favicon/favicon-32x32.png" />
+    <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="/Assets/images/Favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <link rel="stylesheet" href="Assets/css/responsive.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    /* hello ae --/> */
+    .hero-text .hero-location {
+        padding: 10px;
+        border-radius: 15px;
+    }
+</style>
+
+<body>
+    <!-- Cấu hình cực vip pro -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h3>Cài đặt</h3>
+            <button class="settings-close" id="settingsClose">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="settings-content">
+            <div class="setting-group">
+                <label class="setting-label">
+                    <span>🌙 Chế độ sáng/tối</span>
+                    <div class="theme-switch">
+                        <button class="theme-btn" id="lightTheme" data-theme="light">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                            </svg>
+                            <span>Sáng</span>
+                        </button>
+                        <button class="theme-btn" id="darkTheme" data-theme="dark">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                            </svg>
+                            <span>Tối</span>
+                        </button>
+                    </div>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">
+                    <span>✨ Hiệu ứng động</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="animationsToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">
+                    <span>🔊 Âm thanh</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="soundToggle">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </label>
+                <div class="setting-note">
+                    <small>🚧 Tính năng đang được cập nhật</small>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">
+                    <span>🎨 Màu chủ đề</span>
+                    <div class="color-picker">
+                        <button class="color-btn" data-color="blue" style="background: #3b82f6;"></button>
+                        <button class="color-btn" data-color="purple" style="background: #8b5cf6;"></button>
+                        <button class="color-btn" data-color="pink" style="background: #ec4899;"></button>
+                        <button class="color-btn" data-color="green" style="background: #10b981;"></button>
+                        <button class="color-btn" data-color="orange" style="background: #f59e0b;"></button>
+                    </div>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">
+                    <span>🌟 Hiệu ứng nền</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="backgroundToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tôi không bị gay -->
+    <button class="settings-btn" id="settingsBtn">
+        <svg class="settings-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+        </svg>
+    </button>
+
+    <!-- Settings -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
+
+    <!-- Welcome -->
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="welcome-content">
+            <div class="welcome-header">
+                <div class="welcome-avatar">
+                    <img src="Assets/images/avatar.png" alt="Lưu Anh Hoàng">
+                    <div class="welcome-status">🟢</div>
+                </div>
+                <div class="welcome-info">
+                    <h3>Xin chào! 👋</h3>
+                    <p>Chào mừng bạn đến với trang web của mình</p>
+                </div>
+                <button class="welcome-close" id="welcomeClose">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+            <!--  phần thông báo đẹp trai -->
+            <div class="welcome-body">
+                <div class="welcome-message">
+                    <p>🚀 Mình là <strong>Lưu Anh Hoàng</strong>, tôi kiếm tiền vì tương lai!</p>
+                    <p>✨ Website này được khởi tạo vào ngày 04/08/2025☕</p>
+                    <p>🎯 Hãy khám phá và đừng quên liên hệ nếu bạn có dự án thú vị!</p>
+                    <p>🎯 phiên bản update 0.0.2 được lấy ý tưởng sáng tạo từ em!</p>
+                </div>
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🌙</span>
+                        <span>Đẹp trai không phải lựa chọn, đó là định mệnh.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚙️</span>
+                        <span>Béo một chút nhưng ôm là ấm, cười là thương.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💕</span>
+                        <span>Ước mơ không chỉ để nói, mà để sống hết mình vì nó.</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <span>Sự im lặng của bạn… khiến tôi tưởng mình không còn tồn tại.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-footer">
+                <div class="welcome-actions">
+                    <button class="welcome-btn secondary" id="welcomeRemindLater">
+                        Nhắc lại sau
+                    </button>
+                    <button class="welcome-btn primary" id="welcomeGetStarted">
+                        Bắt đầu khám phá! 🚀
+                    </button>
+                </div>
+
+                <div class="welcome-options">
+                    <label class="welcome-checkbox">
+                        <input type="checkbox" id="dontShowAgain">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Không hiển thị lại</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome over -->
+    <div class="welcome-overlay" id="welcomeOverlay"></div>
+
+    <div class="portfolio-container">
+        <!-- Modern Neon Profile Card -->
+            <div class="hero-container">
+                <!-- Left Side - Avatar -->
+                <div class="hero-left">
+                    <div class="avatar-container">
+                        <img src="Assets/images/avatar.png" alt="Lưu Anh Hoàng" class="hero-avatar" />
+                    </div>
+                </div>
+
+                <!-- Right Side - Info -->
+                <div class="hero-right">
+                    <!-- Name and Nickname -->
+                    <div class="hero-name-section">
+                        <h1 class="hero-name">Lưu Anh Hoàng</h1>
+                        <span class="hero-nickname">(tôi bị đẹp trai)</span>
+                    </div>
+
+                    <!-- Poetry -->
+                    <div class="hero-poetry">
+                        <p>Tưởng là ánh nắng qua rèm</p>
+                        <p>Ai ngờ ánh mắt em làm tôi mù</p>
+                        <p>Ra vào lớp học lơ mơ</p>
+                        <p>Vì ai ngồi đó… chẳng ngờ lại thương</p>
+                    </div>
+
+                    <!-- Location and Crush -->
+                    <div class="hero-info">
+                        <div class="info-item">
+                            <span class="info-label">📍 Vị trí:</span>
+                            <span class="info-value">Hưng Yên, Việt Nam</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">💕 Tình trạng:</span>
+                            <span class="info-value">Độc thân</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="hero-description">
+                        <p>Mình là Hoàng. Đây là nơi mình cập nhật các dự án lập trình và một số thông tin liên quan đến công việc. Nếu bạn cần hỗ trợ hoặc trao đổi, cứ thoải mái liên hệ.</p>
+                    </div>
+                </div>
+            </div>
+        <section class="contact-section">
+                <h2 class="section-title">Kết nối với mình</h2>
+                <div class="contact-cards">
+                    <a href="https://www.facebook.com/user.luuanhhoang.dev/" target="_blank" rel="noopener noreferrer"
+                        class="contact-card facebook">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Facebook</h3>
+                            <p>user.luuanhhoang.dev</p>
+                            <span class="contact-card-action">Kết bạn →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/luuanhhoang" target="_blank" rel="noopener noreferrer"
+                        class="contact-card github">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>GitHub</h3>
+                            <p>luuanhhoang</p>
+                            <span class="contact-card-action">Xem code →</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        <!-- </section> -->
+        <!-- // đoạn này đang test code mà quá rác -->
+        <!-- Skills Section -->
+        <!-- <section class="skills-section">
+            <h2 class="section-title">Kỹ năng chuyên môn</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM6.5 17.5l3-3-3-3 1.5-1.5L12.5 14l-4.5 4.5-1.5-1zm7 0v-2h3v2h-3z"/>
+                        </svg>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Java, PHP, Database Design</p>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Game Development</h3>
+                    <p>Game Logic, Tool Development</p>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>System Architecture</h3>
+                    <p>Scalable Solutions, Performance</p>
+                </div>
+            </div>
+        </section> -->
+        <!-- Contact Section -->
+
+
+        <!-- hiển thị footer lỏ -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="copyright-main">
+                    <p>&copy; 2025 Lưu Anh Hoàng. All rights reserved.</p>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-details">
+                    <div class="footer-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        <span>Thiết kế với giao diện tự nhiên</span>
+                    </div>
+
+                    <div class="footer-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span>Lưu anh hoàng❤️</span>
+                    </div>
+
+                    <div class="footer-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+                        </svg>
+                        <span>Luôn cập nhật và cải tiến 🚀</span>
+                    </div>
+                </div>
+
+                <div class="footer-tech">
+                    <p class="tech-stack">Được xây dựng lên từ ý tưởng độc đáo☕</p>
+                    <p class="version">Phiên bản 4.0.0 - Simple Layout</p>
+                    <p class="version"> 04/08/2025</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="Assets/js/main-ofb.js"></script>
+</body>
+
+</html>
