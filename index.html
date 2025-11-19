@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lưu Anh Hoàng - Website Developer</title>
+    <meta name="description" content="Website Developer chuyên phát triển ứng dụng web hiện đại">
+    <meta name="keywords" content="Lưu Anh Hoàng, LAH, Website Developer, Frontend, Backend">
+    <link rel="stylesheet" href="Assets/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="loading dark-mode">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="cssload-loader">
+            <div class="cssload-inner cssload-one"></div>
+            <div class="cssload-inner cssload-two"></div>
+            <div class="cssload-inner cssload-three"></div>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <!-- Audio Visualizer Background -->
+        <canvas id="audio-visualizer"></canvas>
+        
+        <!-- Falling Hearts Container -->
+        <div id="falling-hearts"></div>
+        
+        <!-- Corner Decorations -->
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        
+        <!-- Music Player -->
+        <audio id="background-music" loop>
+            <source src="Assets/music/ShapeOfYou.mp3" type="audio/mpeg">
+        </audio>
+        
+        <button id="music-toggle" class="music-btn">
+            <svg class="music-icon playing" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            <svg class="music-icon paused" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+                <line x1="9" y1="9" x2="21" y2="7"></line>
+            </svg>
+        </button>
+        
+        <button id="settings-toggle" class="settings-btn-global">
+            <span class="settings-text">BẬT/TẮT</span>
+        </button>
+
+        <!-- Settings Popup -->
+        <div id="settings-popup" class="settings-popup">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h3>Cấu hình</h3>
+                    <button id="close-settings" class="close-btn">×</button>
+                </div>
+                <div class="settings-body">
+                    <div class="setting-item">
+                        <label class="setting-label">Đổi Dark Mode</label>
+                        <div class="theme-select-group">
+                            <input type="radio" id="theme-dark" name="theme" value="dark" checked>
+                            <label for="theme-dark" class="theme-select-option">
+                                <span class="theme-indicator"></span>
+                                <span class="theme-text">Tối</span>
+                            </label>
+
+                            <input type="radio" id="theme-light" name="theme" value="light">
+                            <label for="theme-light" class="theme-select-option">
+                                <span class="theme-indicator"></span>
+                                <span class="theme-text">Sáng</span>
+                            </label>
+
+                            <input type="radio" id="theme-system" name="theme" value="system">
+                            <label for="theme-system" class="theme-select-option">
+                                <span class="theme-indicator"></span>
+                                <span class="theme-text">Hệ thống</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-layout">
+            <div class="left-column">
+                <div class="profile-card">
+                    <div class="avatar-large avatar-animated">
+                        <img src="Assets/images/logo.png" alt="luuanhhoang"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-placeholder">LAH</div>
+                    </div>
+
+                    <h1>Lưu Anh Hoàng</h1>
+                    <p class="nickname">"sẽ có những con chó phải trả giá"</p>
+                    <button id="poetry-btn" class="poetry-toggle" title="Đọc tâm sự">
+                        <span class="poetry-toggle-text">click vào đây</span>
+                    </button>
+                    <p class="role">Website Developer</p>
+                    <p class="location-inline">📍 Hưng Yên, Việt Nam</p>
+
+                    <div class="profile-divider"></div>
+
+                    <div class="about-compact">
+                        <p>Xin chào, mình là Hoàng. Mình là một Website Developer đam mê công nghệ và luôn học hỏi những
+                            điều mới.</p>
+                    </div>
+
+                    <div class="skills-compact">
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">SCSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Thông tin</h3>
+
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <span class="info-label">Nghề nghiệp</span>
+                            <span class="info-value">Học sinh</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-label">Địa chỉ</span>
+                            <span class="info-value">Hưng Yên</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-label">Tình trạng</span>
+                            <span class="info-value">Độc thân</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/user.luuanhhoang.dev/" target="_blank"
+                            class="social-btn facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://github.com/luuanhhoang" target="_blank" class="social-btn github">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://tiktok.com/@luuanhhoang" target="_blank" class="social-btn tiktok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Poetry Popup -->
+                <div id="poetry-popup" class="poetry-popup">
+                    <div class="poetry-popup-content">
+                        <div class="poetry-popup-header">
+                            <div class="poetry-popup-title">
+                                <span class="poetry-icon">✍️</span>
+                                <h3>Tâm Sự</h3>
+                            </div>
+                            <button id="close-poetry" class="close-poetry-btn">×</button>
+                        </div>
+                        <div class="poetry-popup-body">
+                            <p class="poetry-text">Lên lớp lén nhìn em hoài
+                                Ai vô véo má… tim tôi đau nghẹn
+                                Thấy em sát cạnh người hoài
+                                Cười nói thân thiết làm lòng tôi lạnh
+                                Thằng nhát trót thương bấy lâu
+                                Coder ngồi đó… ghen mà chẳng dám gần</p>
+                            <div class="poetry-footer">
+                                <span class="poetry-author">— LAH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <p class="footer-brand">Lưu Anh Hoàng</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/user.luuanhhoang.dev/" target="_blank" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/luuanhhoang" target="_blank" title="GitHub">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com/@luuanhhoang" target="_blank" title="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2025 Lưu Anh Hoàng. Made with 💙</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Page initialization
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loadingScreen = document.getElementById('loading-screen');
+                const mainContent = document.getElementById('main-content');
+                const body = document.body;
+
+                loadingScreen.classList.add('fade-out');
+
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    body.classList.remove('loading');
+
+                    setTimeout(function () {
+                        mainContent.classList.add('fade-in');
+                    }, 50);
+                }, 800);
+
+            }, 2000);
+        });
+
+        // Settings popup functionality
+        const settingsToggle = document.getElementById('settings-toggle');
+        const settingsPopup = document.getElementById('settings-popup');
+        const closeSettings = document.getElementById('close-settings');
+        const themeRadios = document.querySelectorAll('input[name="theme"]');
+        const body = document.body;
+
+        // Toggle settings popup
+        settingsToggle.addEventListener('click', function () {
+            settingsPopup.classList.add('active');
+        });
+
+        // Close settings popup
+        closeSettings.addEventListener('click', function () {
+            settingsPopup.classList.remove('active');
+        });
+
+        // Close popup when clicking outside
+        settingsPopup.addEventListener('click', function (e) {
+            if (e.target === settingsPopup) {
+                settingsPopup.classList.remove('active');
+            }
+        });
+
+        // Theme selection
+        themeRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                const theme = this.value;
+
+                // Apply theme
+                if (theme === 'dark') {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else if (theme === 'light') {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                } else if (theme === 'system') {
+                    // Detect system preference
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (prefersDark) {
+                        body.classList.add('dark-mode');
+                    } else {
+                        body.classList.remove('dark-mode');
+                    }
+                    localStorage.setItem('theme', 'system');
+                }
+            });
+        });
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.remove('dark-mode');
+            document.getElementById('theme-light').checked = true;
+        } else if (savedTheme === 'system') {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+            document.getElementById('theme-system').checked = true;
+        } else {
+            body.classList.add('dark-mode');
+            document.getElementById('theme-dark').checked = true;
+        }
+
+        // Poetry popup functionality
+        const poetryBtn = document.getElementById('poetry-btn');
+        const poetryPopup = document.getElementById('poetry-popup');
+        const closePoetry = document.getElementById('close-poetry');
+
+        // Open poetry popup
+        poetryBtn.addEventListener('click', function() {
+            poetryPopup.classList.add('active');
+        });
+
+        // Close poetry popup
+        closePoetry.addEventListener('click', function() {
+            poetryPopup.classList.remove('active');
+        });
+
+        // Close popup when clicking outside
+        poetryPopup.addEventListener('click', function(e) {
+            if (e.target === poetryPopup) {
+                poetryPopup.classList.remove('active');
+            }
+        });
+
+        // Falling Hearts Effect
+        const heartsContainer = document.getElementById('falling-hearts');
+        
+        function createHeart(initialY = null) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤';
+            
+            // Random position
+            const startX = Math.random() * 100;
+            heart.style.left = startX + '%';
+            
+            // Initial Y position for natural start
+            if (initialY !== null) {
+                heart.style.top = initialY + 'vh';
+            }
+            
+            // Random swing distance (-100px to 100px)
+            const swing = (Math.random() - 0.5) * 200;
+            heart.style.setProperty('--swing', swing + 'px');
+            
+            // Random rotation
+            const rotate = (Math.random() - 0.5) * 720; // -360 to 360 degrees
+            heart.style.setProperty('--rotate', rotate + 'deg');
+            
+            // Random duration (8-15 seconds)
+            const duration = 8 + Math.random() * 7;
+            heart.style.animationDuration = duration + 's';
+            
+            // No delay for natural flow
+            heart.style.animationDelay = '0s';
+            
+            // Random size
+            const size = 15 + Math.random() * 15;
+            heart.style.fontSize = size + 'px';
+            
+            heartsContainer.appendChild(heart);
+            
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+        
+        // Create hearts periodically
+        setInterval(() => createHeart(), 800);
+        
+        // Create initial hearts at random positions for natural start
+        for (let i = 0; i < 15; i++) {
+            const randomY = Math.random() * 100 - 10; // -10 to 90vh
+            createHeart(randomY);
+        }
+
+        // Audio Visualizer Setup
+        const canvas = document.getElementById('audio-visualizer');
+        const ctx = canvas.getContext('2d');
+        let audioContext, analyser, dataArray, bufferLength;
+        let animationId;
+
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Initialize audio context
+        function initAudioContext() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                const source = audioContext.createMediaElementSource(bgMusic);
+                source.connect(analyser);
+                analyser.connect(audioContext.destination);
+                
+                analyser.fftSize = 256;
+                bufferLength = analyser.frequencyBinCount;
+                dataArray = new Uint8Array(bufferLength);
+            }
+        }
+
+        // Draw visualizer
+        function drawVisualizer() {
+            animationId = requestAnimationFrame(drawVisualizer);
+            
+            analyser.getByteFrequencyData(dataArray);
+            
+            ctx.fillStyle = 'rgba(10, 10, 15, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const barWidth = (canvas.width / bufferLength) * 2.5;
+            let x = 0;
+            
+            for (let i = 0; i < bufferLength; i++) {
+                const barHeight = (dataArray[i] / 255) * canvas.height * 0.6;
+                
+                // Gradient color based on frequency
+                const hue = (i / bufferLength) * 360;
+                const gradient = ctx.createLinearGradient(0, canvas.height - barHeight, 0, canvas.height);
+                gradient.addColorStop(0, `hsla(${hue}, 70%, 60%, 0.8)`);
+                gradient.addColorStop(1, `hsla(${hue}, 70%, 60%, 0.2)`);
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                
+                x += barWidth + 1;
+            }
+        }
+
+        // Music player functionality
+        const bgMusic = document.getElementById('background-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const playingIcon = musicToggle.querySelector('.playing');
+        const pausedIcon = musicToggle.querySelector('.paused');
+        let musicStarted = false;
+
+        // Auto-play music on first user interaction
+        function startMusic() {
+            if (!musicStarted) {
+                initAudioContext();
+                bgMusic.play().then(() => {
+                    musicStarted = true;
+                    musicToggle.classList.add('playing');
+                    playingIcon.style.display = 'block';
+                    pausedIcon.style.display = 'none';
+                    drawVisualizer();
+                }).catch(err => {
+                    console.log('Autoplay prevented:', err);
+                });
+            }
+        }
+
+        // Try to start music on any click
+        document.addEventListener('click', startMusic, { once: true });
+
+        // Music toggle button
+        musicToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (bgMusic.paused) {
+                if (!audioContext) initAudioContext();
+                bgMusic.play();
+                musicToggle.classList.add('playing');
+                playingIcon.style.display = 'block';
+                pausedIcon.style.display = 'none';
+                if (!animationId) drawVisualizer();
+            } else {
+                bgMusic.pause();
+                musicToggle.classList.remove('playing');
+                playingIcon.style.display = 'none';
+                pausedIcon.style.display = 'block';
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
